@@ -1,9 +1,17 @@
 package cz.uhk.fim.pro2.game;
 
+import cz.uhk.fim.pro2.gui.GameScreen;
+import cz.uhk.fim.pro2.gui.HomeScreen;
+import cz.uhk.fim.pro2.gui.MainFrame;
+import cz.uhk.fim.pro2.gui.ScoreScreen;
+
 public class Game {
 
 	public static void main(String[] args) {
-		System.out.println("Ahoj Svete");
+		MainFrame mainFrame = new MainFrame();
+		
+		HomeScreen homeScreen = new HomeScreen(mainFrame);
+		mainFrame.setScreen(homeScreen);
 
 	}
 
