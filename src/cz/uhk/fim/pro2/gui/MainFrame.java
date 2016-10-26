@@ -20,8 +20,18 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void setScreen(Screen screen){
-		actualScreen = screen;
+		if (actualScreen != null) {
+			remove(actualScreen);
+		}
+		
 		add(screen);
+		actualScreen = screen;
+		revalidate();
+		
+		/*super.getContentPane().removeAll();
+		actualScreen = screen;
+		super.getContentPane().add(screen);
+		revalidate();*/
 	}
 	
 }
