@@ -4,5 +4,7 @@ public class HomeScreen extends Screen {
 	
 	public HomeScreen(MainFrame mainFrame){
 		super(mainFrame);
+		
+		
 	}
 }
