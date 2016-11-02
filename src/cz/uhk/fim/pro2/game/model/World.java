@@ -23,5 +23,20 @@ public class World {
 		this.hearts.add(heart);
 	}
 	
+	public String toString(){
+		return
+				"Jmeno ptaka: " + bird.getName() + "[ "  + bird.getPositionX() + ", " + bird.getPositionY()+ "]" 
+				+ '\n' + "Pocet srdci: " + hearts.size() 
+				+ '\n' + "Pocet trubek: " + tubes.size();
+	}
+
+	public Bird getBird() {
+		return bird;
+	}
+
+	public void setBird(Bird bird) {
+		this.bird = bird;
+	}
+	
 	
 }

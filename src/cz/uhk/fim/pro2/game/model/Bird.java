@@ -27,8 +27,8 @@ public class Bird {
 		return positionX;
 	}
 	
-	public void setPositionX(float x){
-		this.positionX = x;
+	public void setPositionX(float positionX){
+		this.positionX = positionX;
 	}
 	
 	public float getSpeed() {
