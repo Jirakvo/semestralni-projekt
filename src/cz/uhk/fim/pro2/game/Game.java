@@ -12,6 +12,8 @@ public class Game {
 		
 		HomeScreen homeScreen = new HomeScreen(mainFrame);
 		mainFrame.setScreen(homeScreen);
+		
+		
 
 	}
 
