@@ -21,6 +21,8 @@ public class ScoreScreen extends Screen {
 			}
 		});
 		
+		jButtonBack.setBounds(20, 20, 60, 60);
+		
 		add(jButtonBack);
 	}
 	
