@@ -1,5 +1,7 @@
 package cz.uhk.fim.pro2.gui;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,7 +23,11 @@ public class ScoreScreen extends Screen {
 			}
 		});
 		
-		jButtonBack.setBounds(20, 20, 60, 60);
+		jButtonBack.setBounds(20, 20, 80, 60);
+		
+		jButtonBack.setFont(new Font("Arial", Font.PLAIN, 10));
+		jButtonBack.setForeground(Color.GREEN);
+		jButtonBack.setBackground(Color.gray);
 		
 		add(jButtonBack);
 	}

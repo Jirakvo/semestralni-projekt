@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.Timer;
 
 import cz.uhk.fim.pro2.game.model.Bird;
 import cz.uhk.fim.pro2.game.model.Heart;
@@ -13,6 +14,10 @@ import cz.uhk.fim.pro2.game.model.Tube;
 import cz.uhk.fim.pro2.game.model.World;
 
 public class GameScreen extends Screen {
+	
+	private long lastTimeMills;
+	
+	private Timer timer;
 	
 	public GameScreen(MainFrame mainFrame){
 		super(mainFrame);
@@ -30,12 +35,31 @@ public class GameScreen extends Screen {
 			}
 		});
 		
-		jButtonBack.setBounds(20, 20, 60, 60);
-		jButtonPause.setBounds(400, 20, 60, 60);
+		
+		jButtonPause.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (timer.isRunning()) {
+					timer.stop();
+				}else{
+					lastTimeMills = System.currentTimeMillis();
+					timer.start();
+				}
+				
+			}
+		});
+		
+		jButtonBack.setBounds(20, 20, 80, 60);
+		jButtonPause.setBounds(380, 20, 80, 60);
 		
 		jButtonBack.setFont(new Font("Arial", Font.PLAIN, 10));
 		jButtonBack.setForeground(Color.GREEN);
+		jButtonBack.setBackground(Color.gray);
 		
+		jButtonPause.setFont(new Font("Arial", Font.PLAIN, 10));
+		jButtonPause.setForeground(Color.RED);
+		jButtonPause.setBackground(Color.gray);
 		
 		add(jButtonPause);
 		add(jButtonBack);
@@ -54,5 +78,22 @@ public class GameScreen extends Screen {
 		gameCanvas.setBounds(0, 0, MainFrame.WIDTH, MainFrame.HEIGHT);
 		add(gameCanvas);
 		
+		timer = new Timer(20, new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				long currentTimeMills = System.currentTimeMillis();
+				
+				float delta = (currentTimeMills - lastTimeMills) / 1000f;
+				//System.out.println(delta);
+				world.update(delta);
+				gameCanvas.repaint();
+				
+				lastTimeMills = currentTimeMills;
+			}
+		});
+		
+		lastTimeMills = System.currentTimeMillis();
+		timer.start();
 	}
 }
