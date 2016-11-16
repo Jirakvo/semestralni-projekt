@@ -21,7 +21,7 @@ public class World {
 		this.hearts = new ArrayList<>();
 		this.worldListener = worldListener;
 	}
-	
+	//sddsdasd
 	public void update(float deltaTime){
 		bird.update(deltaTime);
 		

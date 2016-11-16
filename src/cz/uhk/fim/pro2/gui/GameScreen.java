@@ -90,7 +90,7 @@ public class GameScreen extends Screen implements WorldListener {
 			}
 			
 		});
-				
+			//sdds	
 		timer = new Timer(20, new ActionListener() {
 			
 			@Override
