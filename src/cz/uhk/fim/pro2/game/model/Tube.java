@@ -22,7 +22,7 @@ public class Tube {
 		
 		
 	}
-	//sd
+	
 	public void paint(Graphics g){
 		g.setColor(Color.GREEN);
 		

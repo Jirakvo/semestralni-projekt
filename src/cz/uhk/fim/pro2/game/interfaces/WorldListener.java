@@ -10,4 +10,3 @@ public interface WorldListener {
 	
 	void outOf();
 }
-//sds

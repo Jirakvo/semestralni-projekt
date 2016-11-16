@@ -20,7 +20,7 @@ public class Heart {
 	public void update(float deltaTime){
 		positionX -= World.getSpeed() * deltaTime;
 	}
-//sdsad
+
 	public float getPositionX() {
 		return positionX;
 	}

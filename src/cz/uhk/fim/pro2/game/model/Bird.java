@@ -16,7 +16,7 @@ public class Bird {
 	private float speed;
 	private float lives;
 	
-	//sds
+	
 	public Bird(String name, float positionX, float positionY){
 		this.name = name;
 		this.positionX = positionX;
