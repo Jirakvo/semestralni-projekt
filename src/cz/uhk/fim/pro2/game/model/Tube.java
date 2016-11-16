@@ -2,6 +2,7 @@ package cz.uhk.fim.pro2.game.model;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 import cz.uhk.fim.pro2.gui.MainFrame;
 
@@ -25,9 +26,27 @@ public class Tube {
 	public void paint(Graphics g){
 		g.setColor(Color.GREEN);
 		
+		Rectangle topRectangle = getTopRectangle();
+		Rectangle bottomRectangle = getBottomRectangle();
+		
+		
 		g.fillRect((int)getPositionX() - 25, (int) height, 50, (int) (MainFrame.HEIGHT - height));
 		
 		g.fillRect((int)getPositionX() - 25, 0, 50, (int) (height - GAP));
+	}
+	
+	public Rectangle getTopRectangle(){
+		return new Rectangle(
+				);
+	}
+	
+	public Rectangle getBottomRectangle(){
+		return new Rectangle(
+				);
+	}
+	
+	public void update(float deltaTime){
+		positionX -= World.getSpeed() * deltaTime;
 	}
 
 

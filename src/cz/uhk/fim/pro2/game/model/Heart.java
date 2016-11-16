@@ -16,6 +16,10 @@ public class Heart {
 		g.setColor(Color.RED);
 		g.fillRect((int)getPositionX() - 25, (int)getPositionY(), 50, 50);
 	}
+	
+	public void update(float deltaTime){
+		positionX -= World.getSpeed() * deltaTime;
+	}
 
 	public float getPositionX() {
 		return positionX;
